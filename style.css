@@ -112,17 +112,19 @@ html, body {
     width: 100%;
     height: 100%;
     z-index: 10;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .titulo-amor {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #fff;
     text-shadow: 4px 4px 20px rgba(255,0,127,0.8);
     animation: aparecer 1s ease-in-out;
     text-align: center;
-    margin-top: 10vh;
-    margin-bottom: 5vh;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
@@ -133,12 +135,9 @@ html, body {
 
 /* ===== RAMO DE FLORES ===== */
 .ramo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 350px;
+    position: relative;
+    width: 320px;
+    height: 280px;
     animation: aparecer 1.5s ease-in-out 0.5s both;
 }
 
@@ -157,34 +156,34 @@ html, body {
 
 .petals {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 .petal {
     position: absolute;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     opacity: 0.9;
 }
 
-.petal:nth-child(1) { top: -10px; left: 27px; }
-.petal:nth-child(2) { top: 15px; right: 0; }
-.petal:nth-child(3) { bottom: 15px; right: 15px; }
-.petal:nth-child(4) { bottom: 15px; left: 15px; }
-.petal:nth-child(5) { top: 15px; left: 0; }
+.petal:nth-child(1) { top: -8px; left: 25px; }
+.petal:nth-child(2) { top: 12px; right: 0; }
+.petal:nth-child(3) { bottom: 12px; right: 12px; }
+.petal:nth-child(4) { bottom: 12px; left: 12px; }
+.petal:nth-child(5) { top: 12px; left: 0; }
 
 .flower-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #fff;
+    border: 3px solid #fff;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     z-index: 2;
 }
@@ -196,19 +195,19 @@ html, body {
 }
 
 .stem {
-    width: 5px;
-    height: 120px;
+    width: 4px;
+    height: 110px;
     background: linear-gradient(180deg, #90EE90 0%, #228B22 100%);
     margin-top: -5px;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 /* Posiciones de las 5 flores */
-.flower-1 { left: 50%; top: 10px; transform: translateX(-50%); animation-delay: 0.1s; }
-.flower-2 { left: 20%; top: 50px; animation-delay: 0.2s; }
-.flower-3 { right: 20%; top: 50px; animation-delay: 0.3s; }
-.flower-4 { left: 5%; top: 110px; animation-delay: 0.4s; }
-.flower-5 { right: 5%; top: 110px; animation-delay: 0.5s; }
+.flower-1 { left: 50%; top: 0; transform: translateX(-50%); animation-delay: 0.1s; }
+.flower-2 { left: 15%; top: 40px; animation-delay: 0.2s; }
+.flower-3 { right: 15%; top: 40px; animation-delay: 0.3s; }
+.flower-4 { left: 0; top: 90px; animation-delay: 0.4s; }
+.flower-5 { right: 0; top: 90px; animation-delay: 0.5s; }
 
 /* Colores de pétalos */
 .flower-1 .petal { background: #FFB6C1; }
@@ -252,36 +251,32 @@ html, body {
     }
     
     .titulo-amor {
-        font-size: 2.5rem;
-        margin-top: 5vh;
-        margin-bottom: 3vh;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
     }
     
     .ramo-container {
-        width: 300px;
-        height: 300px;
-        top: 55%;
+        width: 280px;
+        height: 250px;
     }
     
     .petals {
-        width: 85px;
-        height: 85px;
+        width: 80px;
+        height: 80px;
     }
     
     .petal {
-        width: 38px;
-        height: 38px;
+        width: 35px;
+        height: 35px;
     }
     
     .flower-center {
-        width: 50px;
-        height: 50px;
-        border: 3px solid #fff;
+        width: 48px;
+        height: 48px;
     }
     
     .stem {
-        height: 100px;
-        width: 4px;
+        height: 95px;
     }
 }
 
@@ -307,20 +302,37 @@ html, body {
     
     .ramo-container {
         width: 260px;
-        height: 260px;
+        height: 230px;
     }
 }
 
 @media (max-height: 700px) {
     .titulo-amor {
-        font-size: 2rem;
-        margin-top: 3vh;
-        margin-bottom: 2vh;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
     
     .ramo-container {
-        top: 55%;
-        width: 280px;
-        height: 280px;
+        width: 240px;
+        height: 210px;
+    }
+    
+    .petals {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .petal {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .flower-center {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .stem {
+        height: 80px;
     }
 }
