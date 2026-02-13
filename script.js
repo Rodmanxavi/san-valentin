@@ -12,7 +12,7 @@ for (let i = 0; i < 8; i++) {
 
 // Posicionar botón NO inicialmente
 window.addEventListener('load', () => {
-    posicionarBotonNo();
+    setTimeout(posicionarBotonNo, 100);
 });
 
 window.addEventListener('resize', () => {
@@ -24,11 +24,15 @@ window.addEventListener('resize', () => {
 
 function posicionarBotonNo() {
     const btnNo = document.getElementById('btnNo');
-    const botones = document.querySelector('.botones');
-    const rect = botones.getBoundingClientRect();
+    const btnSi = document.querySelector('.btn-si');
     
-    btnNo.style.left = (rect.left + rect.width/2 + 85) + 'px';
-    btnNo.style.top = (rect.top + rect.height/2 - btnNo.offsetHeight/2) + 'px';
+    if (!btnSi) return;
+    
+    const rectSi = btnSi.getBoundingClientRect();
+    
+    // Posicionar al lado derecho del botón SI
+    btnNo.style.left = (rectSi.right + 30) + 'px';
+    btnNo.style.top = rectSi.top + 'px';
 }
 
 function moverBoton(event) {
