@@ -16,7 +16,8 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', () => {
-    if (document.getElementById('pregunta').style.display !== 'none') {
+    const pregunta = document.getElementById('pregunta');
+    if (pregunta.style.display !== 'none') {
         posicionarBotonNo();
     }
 });
@@ -45,9 +46,14 @@ function moverBoton(event) {
 }
 
 function responderSi() {
+    // Ocultar pregunta
     document.getElementById('pregunta').style.display = 'none';
-    document.getElementById('respuesta').style.display = 'block';
     
+    // Mostrar respuesta con clase
+    const respuesta = document.getElementById('respuesta');
+    respuesta.classList.add('mostrar');
+    
+    // Quitar mariposas
     document.querySelectorAll('.butterfly').forEach(b => b.remove());
     
     // Crear corazones cayendo
